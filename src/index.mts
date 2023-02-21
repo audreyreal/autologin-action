@@ -2,7 +2,12 @@ import * as core from "@actions/core";
 import * as httpm from "@actions/http-client";
 import PQueue from "p-queue";
 
-const userAgent = core.getInput("user_agent");
+const githubActionRepo = process.env["GITHUB_ACTION_REPOSITORY"];
+const githubUserRepo = process.env["GITHUB_REPOSITORY"];
+
+const userAgent = `autologin-action (by: esfalsa ${githubActionRepo}; user: ${core.getInput(
+  "user_agent"
+)} ${githubUserRepo})`;
 const credentials = JSON.parse(core.getInput("credentials"));
 
 const http = new httpm.HttpClient(userAgent);
