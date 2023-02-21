@@ -44,8 +44,12 @@ function isValidAuth(auth: unknown): auth is Auth {
   return "password" in auth || "pin" in auth || "autologin" in auth;
 }
 
-for (const [nation, auth] of Object.entries(credentials)) {
-  if (isValidAuth(auth)) {
-    await ping(nation, auth);
+async function run() {
+  for (const [nation, auth] of Object.entries(credentials)) {
+    if (isValidAuth(auth)) {
+      await ping(nation, auth);
+    }
   }
 }
+
+run();
