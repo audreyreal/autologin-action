@@ -6,7 +6,7 @@
   "author": "Pronoun",
   "main": "dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --minify --sourcemap=external",
+    "build": "esbuild src/index.mts --bundle --outfile=dist/index.js --platform=node --minify --sourcemap=external",
     "test:src": "TEST=src tsx test/index.test.ts",
     "test:dist": "TEST=dist tsx test/index.test.ts"
   },
