@@ -1,0 +1,14 @@
+name: "NationStates Autologin"
+description: "Keep your NationStates nations alive"
+author: "Pronoun"
+inputs:
+  user_agent:
+    required: true
+    description: "A name to identify you to NationStates servers, such as your nation name."
+    default: "unknown"
+  credentials:
+    required: true
+    description: "A record of puppet nations and their login credentials."
+runs:
+  using: "node16"
+  main: "dist/index.js"
